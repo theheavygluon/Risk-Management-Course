@@ -1,0 +1,16 @@
+
+h1 {
+
+font-size=120%;
+font-variant: small-caps;
+
+}
+
+pre {
+	font-size: small;
+	font-family: "Courier New", Courier, mono;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+}

@@ -1,0 +1,702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0081)http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><meta http-equiv="expires" content="86400">
+<title>13.2 Extensions of the GARCH Model</title>
+<meta name="description" content="13.2 Extensions of the GARCH Model">
+<meta name="keywords" content="sfehtml">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8559-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="./Extensions of the GARCH Model_files/tutcontent.css">
+
+</head>
+
+<body>
+
+<h1><a name="SECTION001520000000000000000">
+13.2 Extensions of the GARCH Model</a>
+</h1>
+
+<a name="MDBOOK:125"></a>
+
+<p>
+<a name="sec:garcherw"></a>
+</p><p>
+Standard GARCH models assume that positive and negative error
+terms have a symmetric effect on the volatility. In other words,
+good and bad news have the same effect on the volatility in this
+model. In practice this assumption is frequently violated, in
+particular by stock returns, in that the volatility increases more
+after bad news than after good news. This so called <em>Leverage
+Effect</em> appears firstly in <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#bla:76">Black (1976)</a>, who noted that:
+</p><blockquote>
+<i>``a drop in the value of the firm will cause a negative return
+on its stock, and will usually increase the leverage of the stock.
+[...] That rise in the debt-equity ratio will surely mean a rise
+in the volatility of the stock''</i>.
+
+</blockquote>
+A very simple but plausible explanation for the leverage effect:
+Negative returns imply a larger proportion of debt through a
+reduced market value of the firm, which leads to a higher
+volatility. The risk, i.e. the volatility reacts first to larger
+changes of the market value, nevertheless it is empirically shown
+that there is a high volatility after smaller changes. On the
+other hand, Black said nothing about the effect of positive
+returns on the volatility. Although the positive returns cause
+smaller increases, they do cause an increase in the volatility.
+From an empirical point of view the volatility reacts
+asymmetrically to the sign of the shocks and therefore a number of
+parameterized extensions of the standard GARCH model have been
+suggested recently. In the following we will discuss two of the
+most important ones: the exponential GARCH (EGARCH) and the
+threshold GARCH (TGARCH) model.
+
+<h2><a name="SECTION001521000000000000000">
+13.2.1 Exponential GARCH</a>
+</h2>
+
+<a name="MDBOOK:126"></a>
+<a name="21716"></a><a name="21717"></a>
+Let <img width="22" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg606.gif" alt="$ Z_t$"> further denote a series of <img width="40" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2522.gif" alt="$ i.i.d.$"> standardized random
+variables with expectation 0 and variance 1. The general
+exponential GARCH (EGARCH) model is given by <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#nel:91">Nelson (1991)</a>:
+<p></p>
+<div align="CENTER"><a name="egarch1eq"></a><!-- MATH
+ \begin{equation}
+\log \sigma_t^2 = \omega_t + \sum_{k=1}^{\infty} \beta_k g(Z_{t-k}),
+\end{equation}
+ -->
+<table cellpadding="0" width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE">
+<td nowrap="" align="CENTER"><img width="218" height="66" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2523.gif" alt="$\displaystyle \log \sigma_t^2 = \omega_t + \sum_{k=1}^{\infty} \beta_k g(Z_{t-k}),$"></td>
+<td nowrap="" width="10" align="RIGHT">
+(13.27)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where <img width="21" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2524.gif" alt="$ \omega_t$">, <img width="22" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2525.gif" alt="$ \beta_k$"> are deterministic coefficients and
+<p></p>
+<div align="CENTER"><a name="egarch2eq"></a><!-- MATH
+ \begin{equation}
+g(Z_t) = \theta Z_t + \gamma( |Z_t| - E|Z_t| ).
+\end{equation}
+ -->
+<table cellpadding="0" width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE">
+<td nowrap="" align="CENTER"><img width="233" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2526.gif" alt="$\displaystyle g(Z_t) = \theta Z_t + \gamma( \vert Z_t\vert - E\vert Z_t\vert ).$"></td>
+<td nowrap="" width="10" align="RIGHT">
+(13.28)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+It can be directly seen that <!-- MATH
+ $E\left[g(Z_t)\right] = 0$
+ -->
+<img width="103" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2527.gif" alt="$ E\left[g(Z_t)\right] = 0$">.
+
+<p>
+The EGARCH model in (<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#egarch1eq">12.27</a>) shows some differences from
+the standard GARCH model:
+
+</p><p>
+
+</p><ul>
+<li>Volatility of the EGARCH model, which is measured by the
+conditional variance <!-- MATH
+ $\sigma_t^2$
+ -->
+<img width="23" height="37" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2303.gif" alt="$ \sigma_t^2$">, is an explicit multiplicative
+function of lagged innovations. On the contrary, volatility of the
+standard GARCH model is an additive function of the lagged error
+terms <!-- MATH
+ $\varepsilon_t$
+ -->
+<img width="18" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1650.gif" alt="$ \varepsilon_t$">, which causes a complicated functional
+dependency on the innovations; for example the ARCH(1) in Theorem
+<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode66.html#satz:repr1">12.4</a>.
+</li>
+<li>Volatility can react asymmetrically to the
+good and bad news.
+</li>
+<li>For the general distributions of <img width="22" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg606.gif" alt="$ Z_t$">
+the parameter restrictions for strong and covariance-stationarity
+coincide.
+</li>
+<li>The parameters in (<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#egarch1eq">12.27</a>) and
+(<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#egarch2eq">12.28</a>) are not restricted to positive values.
+</li>
+</ul>
+
+<p>
+The function <img width="32" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2528.gif" alt="$ g(\cdot)$"> in (<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#egarch2eq">12.28</a>) is piecewise linear.
+It contains two parameters which define the `size effect' and the
+`sign effect' of the shocks on volatility. The first is a typical
+ARCH effect while the second is an asymmetrical effect, for
+example, the leverage effect. The term <!-- MATH
+ $\gamma(|Z_t| - E|Z_t|)$
+ -->
+<img width="118" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2529.gif" alt="$ \gamma(\vert Z_t\vert - E\vert Z_t\vert)$">
+determines the size effect and the term <!-- MATH
+ $\theta Z_t$
+ -->
+<img width="31" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2530.gif" alt="$ \theta Z_t$"> determines
+the sign effect. The parameter <img width="14" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1613.gif" alt="$ \gamma$"> is thus typically positive
+and <img width="13" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1732.gif" alt="$ \theta$"> is negative.
+
+</p><p>
+To estimate EGARCH models instead of the general MA(<img width="22" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2027.gif" alt="$ \infty$">)
+representation (<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#egarch1eq">12.27</a>), an ARMA(<img width="29" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg19.gif" alt="$ p,q$">) model is applied,
+i.e.,
+</p><p></p>
+<div align="CENTER"><a name="egarch2"></a><!-- MATH
+ \begin{equation}
+\Delta(L) \log \sigma_t^2 = \omega + \Psi(L) g(Z_t),
+\end{equation}
+ -->
+<table cellpadding="0" width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE">
+<td nowrap="" align="CENTER"><img width="231" height="38" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2531.gif" alt="$\displaystyle \Delta(L) \log \sigma_t^2 = \omega + \Psi(L) g(Z_t),$"></td>
+<td nowrap="" width="10" align="RIGHT">
+(13.29)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+with lag-polynomial <img width="44" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2532.gif" alt="$ \Delta(L)$"> and <img width="43" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2533.gif" alt="$ \Psi(L)$"> of order <img width="13" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg17.gif" alt="$ p$"> and <img width="13" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg18.gif" alt="$ q$">
+respectively.
+
+<p>
+EGARCH models benefit from no parameter restrictions, thus the
+possible instabilities of optimization routines are reduced. On
+the other hand the theoretical properties of QML estimators of
+EGARCH models are not clarified to a great extent.
+
+</p><p>
+Let <!-- MATH
+ $\omega_t=\omega=0$
+ -->
+<img width="88" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2534.gif" alt="$ \omega_t=\omega=0$"> and <!-- MATH
+ $\sum_{k=1}^{\infty}\beta_k^2 <
+\infty$
+ -->
+<img width="110" height="37" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2535.gif" alt="$ \sum_{k=1}^{\infty}\beta_k^2 &lt;
+\infty$">. Then <!-- MATH
+ $\sigma_t^2$
+ -->
+<img width="23" height="37" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2303.gif" alt="$ \sigma_t^2$"> is strictly stationary and ergodic, see
+Theorem 2.1 in <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#nel:91">Nelson (1991)</a>. Furthermore, under these
+conditions the unconditional variance exists when <img width="22" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg606.gif" alt="$ Z_t$"> has a <em>generalized error distribution</em> (GED)<a name="21743"></a> with parameter <img width="45" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2536.gif" alt="$ \zeta &gt; 1$">, which determines the
+thickness of the tails, see Theorem 2.2 in <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#nel:91">Nelson (1991)</a>.
+The GED is leptokurtic when <img width="45" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2537.gif" alt="$ \zeta&lt;2$">.
+
+</p><p>
+The normal distribution is a special case of the GED (<img width="45" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2538.gif" alt="$ \zeta=2$">).
+Nelson gives in addition complicated formulas of the unconditional
+moments. One problem is that under other leptokurtic distributions
+such as the Student-<img width="11" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg24.gif" alt="$ t$">, the unconditional variance does not
+exist. The reason is that exponential growth of the conditional
+variance changes with the level of the shocks, which leads to the
+explosion of the unconditional variance when the probability for
+extreme shocks is sufficiently large. Therefore the existence of
+the unconditional moments depends on the choice of the
+distribution of the innovations, which is an undesirable property
+of the EGARCH models. In empirical studies it has been found that
+EGARCH often overweighs the effects of larger shocks on volatility
+and thus results in poorer fits than standard GARCH models, see
+the empirical studies of <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#eng:ng:93">Engle and Ng (1993)</a>.
+
+</p><h2><a name="SECTION001522000000000000000">
+13.2.2 Threshold ARCH Models</a>
+</h2>
+
+<a name="MDBOOK:127"></a>
+<a name="tarchsec"></a>
+<p>
+The idea of the Threshold ARCH (TARCH)<a name="21818"></a><a name="21819"></a><a name="21820"></a>
+models is to divide the distribution of the innovations into
+disjoint intervals and then approximate a piecewise linear
+function for the conditional standard deviation, see
+<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#zak:91">Zakoian (1991)</a>, and the conditional variance respectively,
+see <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#gjr:93">Glosten et&nbsp;al. (1993)</a>. If there are only two intervals, the
+division is normally at zero, i.e., the influence of positive and
+negative innovations on the volatility is differentiated. In this
+case the TARCH model of order <img width="13" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg18.gif" alt="$ q$"> can be written as
+
+</p><p>
+</p><p></p>
+<div align="CENTER"><a name="eq:tarch"></a><!-- MATH
+ \begin{equation}
+\sigma_t^\delta = \omega + \sum_{i=1}^q \alpha_i \varepsilon_{t-i}^\delta + \sum_{i=1}^q
+\alpha_i^- \varepsilon_{t-i}^\delta I(\varepsilon_{t-i}< 0),
+\end{equation}
+ -->
+<table cellpadding="0" width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE">
+<td nowrap="" align="CENTER"><img width="341" height="68" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2539.gif" alt="$\displaystyle \sigma_t^\delta = \omega + \sum_{i=1}^q \alpha_i \varepsilon_{t-i...
+...lta + \sum_{i=1}^q \alpha_i^- \varepsilon_{t-i}^\delta I(\varepsilon_{t-i}&lt; 0),$"></td>
+<td nowrap="" width="10" align="RIGHT">
+(13.30)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+with the indicator function <img width="32" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2540.gif" alt="$ I(\cdot)$"> and <img width="45" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2541.gif" alt="$ \delta=1$"> as in
+<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#zak:91">Zakoian (1991)</a> or <img width="45" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2542.gif" alt="$ \delta=2$"> as in <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#gjr:93">Glosten et&nbsp;al. (1993)</a>.
+
+<p>
+<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#rab:zak:93">Rabemananjara and Zakoian (1993)</a> extend this model by including the lagged
+conditional standard deviations (variance respectively) as a
+regressor, which is known as the TGARCH model<a name="21834"></a><a name="21835"></a><a name="21836"></a>. They also give conditions for
+covariance-stationarity in their study.
+
+</p><p>
+Instead of a piecewise linear function <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#gou:mon:92">Gouriéroux and Monfort (1992)</a> use
+a stepwise function (piecewise constant) as a model for the
+volatility. Let <!-- MATH
+ $A_j, j=1,\ldots,J$
+ -->
+<img width="122" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2543.gif" alt="$ A_j, j=1,\ldots,J$"> be a partition of the
+distribution of the innovation. Then a <em>qualitative threshold
+ARCH</em> model (QTARCH)<a name="21839"></a><a name="21840"></a><a name="21841"></a> of
+order 1 is given by:
+</p><p></p>
+<div align="CENTER"><a name="eq:qtarch"></a><!-- MATH
+ \begin{equation}
+y_t = \sum_{j=1}^J m_j I(y_{t-1} \in A_j)+
+\sum_{j=1}^J s_j I(y_{t-1} \in A_j) Z_t,
+\end{equation}
+ -->
+<table cellpadding="0" width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE">
+<td nowrap="" align="CENTER"><img width="370" height="72" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2544.gif" alt="$\displaystyle y_t = \sum_{j=1}^J m_j I(y_{t-1} \in A_j)+ \sum_{j=1}^J s_j I(y_{t-1} \in A_j) Z_t,$"></td>
+<td nowrap="" width="10" align="RIGHT">
+(13.31)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where <img width="27" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2545.gif" alt="$ m_j$"> and <img width="20" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2546.gif" alt="$ s_j$"> are scalars. In (<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#eq:qtarch">12.31</a>)
+conditional expectations and conditional standard deviations are
+modelled as stepwise functions. One notices that (<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#eq:qtarch">12.31</a>)
+is a homogenous Markov Chain <a name="21851"></a> of order one.
+Models of higher order can be easily derived.
+<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#gou:mon:92">Gouriéroux and Monfort (1992)</a> give a detailed discussion of the
+statistical properties of (<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#eq:qtarch">12.31</a>). Moreover the
+consistency and asymptotic normal distribution of the QML
+estimators are also discussed by them.
+
+<p>
+The threshold models are identified by an abrupt transition
+between two regimes when the generating innovation crosses a
+threshold value. If a smooth transition is preferred in the model,
+then the indicator function in (<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#eq:tarch">12.30</a>) can be replaced
+with the desired continuous function, which tends to zero if the
+values are close to <!-- MATH
+ $\varepsilon_{t-i}$
+ -->
+<img width="33" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2547.gif" alt="$ \varepsilon_{t-i}$"> and tends to one for the
+values further away. Frequently, the logistic function is chosen.
+The model is thus
+<br>
+</p><div align="CENTER"><a name="eq:starch"></a><!-- MATH
+ \begin{eqnarray}
+\sigma_t^\delta &=& \omega + \sum_{i=1}^q \alpha_i \varepsilon_{t-i}^\delta + \sum_{i=1}^q
+\alpha_i^- \varepsilon_{t-i}^\delta F_\gamma(\varepsilon_{t-i})\\
+F_\gamma(u) &=& \frac{1}{1+\exp(-\gamma u)},
+\end{eqnarray}
+ -->
+<table cellpadding="0" align="CENTER" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="22" height="40" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2548.gif" alt="$\displaystyle \sigma_t^\delta$"></td>
+<td width="10" align="CENTER" nowrap=""><img width="18" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg409.gif" alt="$\displaystyle =$"></td>
+<td align="LEFT" nowrap=""><img width="274" height="68" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2549.gif" alt="$\displaystyle \omega + \sum_{i=1}^q \alpha_i \varepsilon_{t-i}^\delta + \sum_{i=1}^q
+\alpha_i^- \varepsilon_{t-i}^\delta F_\gamma(\varepsilon_{t-i})$"></td>
+<td width="10" align="RIGHT">
+(13.32)</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="48" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2550.gif" alt="$\displaystyle F_\gamma(u)$"></td>
+<td width="10" align="CENTER" nowrap=""><img width="18" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg409.gif" alt="$\displaystyle =$"></td>
+<td align="LEFT" nowrap=""><img width="117" height="54" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2551.gif" alt="$\displaystyle \frac{1}{1+\exp(-\gamma u)},$"></td>
+<td width="10" align="RIGHT">
+(13.33)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+with the parameter <img width="46" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2552.gif" alt="$ \gamma&gt;0$">. The indicator function is a
+limiting case of the logistic function for <!-- MATH
+ $\gamma \longrightarrow
+\infty$
+ -->
+<img width="70" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2553.gif" alt="$ \gamma \longrightarrow
+\infty$">.
+
+<p>
+Finally, another model class needs to be mentioned, which is very
+general and  can replicate the asymmetries: the Asymmetric Power
+ARCH (APARCH) model from <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#din:gra:eng:93">Ding et&nbsp;al. (1993)</a>,
+</p><p></p>
+<div align="CENTER"><a name="aparch"></a><!-- MATH
+ \begin{equation}
+\sigma_t^\delta = \omega + \sum_{i=1}^q \alpha_i (|\varepsilon_{t-i}|-\gamma_i \varepsilon_{t-i})^\delta +
+\sum_{j=1}^p \beta_j \sigma_{t-j}^\delta,
+\end{equation}
+ -->
+<table cellpadding="0" width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE">
+<td nowrap="" align="CENTER"><img width="350" height="68" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2554.gif" alt="$\displaystyle \sigma_t^\delta = \omega + \sum_{i=1}^q \alpha_i (\vert\varepsilo...
+...-\gamma_i \varepsilon_{t-i})^\delta + \sum_{j=1}^p \beta_j \sigma_{t-j}^\delta,$"></td>
+<td nowrap="" width="10" align="RIGHT">
+(13.34)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where <img width="45" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2555.gif" alt="$ \delta&gt;0$"> is a parameter to be estimated. However note that
+the EGARCH model is not included in this model class, a direct
+test between GARCH and EGARCH models is thus impossible. A very
+general ARCH model, the <i>augmented GARCH</i> model from
+<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#dua:97">Duan (1997)</a>, also includes the EGARCH model.
+
+<h2><a name="SECTION001523000000000000000">
+13.2.3 Risk and Returns</a>
+</h2>
+
+<a name="MDBOOK:128"></a>
+<a name="archmsec"></a>
+<p>
+In finance theory the relationship between risk and returns plays
+an important role. Many theoretical models such as
+CAPM<a name="21917"></a>, imply a linear
+relationship between the expected returns of a market portfolio
+and the variance. If the risk (i.e. the variance) is not constant
+over time, then the conditional expectation of the market returns
+is a linear function of the conditional variance. The idea from
+<a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode115.html#eng:lil:rob:87">Engle et&nbsp;al. (1987)</a> was consequently used to estimate the
+conditional variances in GARCH and then the estimations will be
+used in the conditional expectations' estimation. This is the so
+called <i>ARCH in Mean</i> (ARCH-M)<a name="21920"></a><a name="21921"></a> model.
+
+</p><p>
+Let <img width="19" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2556.gif" alt="$ y_t$"> be a covariance-stationary return process of a broad
+market index and <!-- MATH
+ $\sigma_t^2$
+ -->
+<img width="23" height="37" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2303.gif" alt="$ \sigma_t^2$"> be the conditional variance
+specified in an ARCH(1) model. The ARCH-M model is
+<br>
+</p><div align="CENTER"><a name="arch-m"></a><!-- MATH
+ \begin{eqnarray}
+y_t &=& \nu + \lambda g(\sigma_t^2) + \varepsilon_t\\
+\sigma_t^2 &=& \omega + \alpha \varepsilon_{t-1}^2, \nonumber
+\end{eqnarray}
+ -->
+<table cellpadding="0" align="CENTER" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="19" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2557.gif" alt="$\displaystyle y_t$"></td>
+<td width="10" align="CENTER" nowrap=""><img width="18" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg409.gif" alt="$\displaystyle =$"></td>
+<td align="LEFT" nowrap=""><img width="121" height="38" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2558.gif" alt="$\displaystyle \nu + \lambda g(\sigma_t^2) + \varepsilon_t$"></td>
+<td width="10" align="RIGHT">
+(13.35)</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="23" height="38" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2462.gif" alt="$\displaystyle \sigma_t^2$"></td>
+<td width="10" align="CENTER" nowrap=""><img width="18" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg409.gif" alt="$\displaystyle =$"></td>
+<td align="LEFT" nowrap=""><img width="84" height="38" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2559.gif" alt="$\displaystyle \omega + \alpha \varepsilon_{t-1}^2,$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where <img width="32" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2528.gif" alt="$ g(\cdot)$"> is a known parameter function. The CAPM implies
+that <img width="70" height="34" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2560.gif" alt="$ g(x)=x$">, although in most empirical applications the square
+root or the logarithm is used. The expression <!-- MATH
+ $\lambda
+g(\sigma_t^2)$
+ -->
+<img width="55" height="37" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2561.gif" alt="$ \lambda
+g(\sigma_t^2)$"> can be interpreted as the risk premium.
+
+<h2><a name="SECTION001524000000000000000">
+13.2.4 Estimation Results for the DAX Returns</a>
+</h2>
+
+<a name="MDBOOK:129"></a>
+
+<p>
+We applied various ARCH models discussed before to the returns of
+the German stock index (DAX). Here we didn't use the DAX as quoted
+on the stock exchange, but instead the DAFOX from the capital
+market database in Karlsruhe, which has been created for analysis
+purposes and is adjusted for dividends and inflation. We consider
+daily returns from 1974 to 1996 (5748 observations).
+
+</p><p>
+The returns indicate a clear autocorrelation of first order. There
+are various possibilities to model these autocorrelations. Two
+most important models, which we have discussed, are the AR models
+and the ARCH-M models. The latter is easy to be interpreted
+economically, i.e., a time dependent risk premium implying an
+autocorrelation of the returns. This economic motivation is
+missing for the AR models: the AR term cannot be interpreted as
+the risk premium, since it can be negative, which contradicts the
+usual assumption of a risk averse agent. However the AR models
+offer frequently a better fit to the data than ARCH-M model. The
+basic model is thus
+<!-- MATH
+ \begin{displaymath}
+y_t = \mu_t + \sigma_t Z_t
+\end{displaymath}
+ -->
+</p><p></p>
+<div align="CENTER">
+<img width="113" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2562.gif" alt="$\displaystyle y_t = \mu_t + \sigma_t Z_t
+$">
+</div><p></p>
+with <!-- MATH
+ $\mu_t = \nu + \phi y_{t-1}$
+ -->
+<img width="117" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2563.gif" alt="$ \mu_t = \nu + \phi y_{t-1}$"> (AR(1)) respectively <!-- MATH
+ $\mu_t =
+\nu + \lambda \sigma_t$
+ -->
+<img width="101" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2564.gif" alt="$ \mu_t =
+\nu + \lambda \sigma_t$"> (ARCH-M), and <img width="20" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1846.gif" alt="$ \sigma_t$"> can be GARCH,
+TGARCH or EGARCH.
+
+<p>
+The estimation results are given in Table <a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/sfehtmlnode67.html#tab:daxarch">12.3</a>. They
+can be summarized as follows:
+
+</p><ul>
+<li>The parameter <img width="14" height="15" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1882.gif" alt="$ \nu$"> is significantly positive for all AR
+models, which is reflected in the long-run increasing trend of the
+stock price. For the ARCH-M model the sign of the trends is not
+only given in <img width="14" height="15" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1882.gif" alt="$ \nu$"> but also in <img width="15" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg259.gif" alt="$ \lambda$">. The effect of a
+negative <img width="14" height="15" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1882.gif" alt="$ \nu$"> can be dominated by a positive <img width="15" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg259.gif" alt="$ \lambda$">, which is
+the case in the GARCH-M and the EGARCH-M models.
+</li>
+<li>The ARCH
+effects are very pronounced, i.e., the parameter <img width="16" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1663.gif" alt="$ \alpha$"> in the
+GARCH model is significant.
+</li>
+<li>There is a high persistence of
+shocks in the volatility. This persistence is measured in the
+GARCH case by the sum of <img width="16" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1663.gif" alt="$ \alpha$"> and <img width="15" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1877.gif" alt="$ \beta$"> and is in each case
+close to 1.
+</li>
+<li>Except for the EGARCH specification of the
+volatility the AR(1) model describes the data better than the
+ARCH-M models.
+</li>
+<li>There exists a leverage effect: the
+corresponding parameters in the TGARCH and the EGARCH models have
+the appropriate signs. In the TGARCH case the <img width="11" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg24.gif" alt="$ t$">-statistic for
+<img width="27" height="18" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2565.gif" alt="$ \alpha^-$"> is 1.75 and 1.77 respectively, and in the EGARCH case
+the <img width="11" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg24.gif" alt="$ t$">-statistic for <img width="13" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1732.gif" alt="$ \theta$"> is -3.65 and -1.97 respectively.
+Negative shocks increase the volatility more than positive shocks.
+</li>
+<li>The TGARCH and the EGARCH models have a priority for
+asymmetry, since they have a better fit to the data when the same
+number of parameters are considered.
+</li>
+</ul>
+
+<p>
+<br></p><p></p>
+<div align="CENTER"><a name="21957"></a>
+<table>
+<caption><strong>Table 12.3:</strong>
+ Estimation results of various ARCH
+models, applied to DAFOX returns 1974-1996. In the parenthesis is
+the <img width="11" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg24.gif" alt="$ t$">-statistic based on the QML asymptotic standard error.</caption>
+<tbody><tr><td>
+<div align="CENTER">
+<table cellpadding="3" border="1" align="CENTER">
+<tbody><tr><td align="CENTER"><font size="-1">
+ </font></td>
+<td align="CENTER"><font size="-1"> AR-G </font></td>
+<td align="CENTER"><font size="-1"> AR-TG </font></td>
+<td align="CENTER"><font size="-1"> AR-EG  </font></td>
+<td align="CENTER"><font size="-1"> GARCH-M  </font></td>
+<td align="CENTER"><font size="-1"> TGARCH-M </font></td>
+<td align="CENTER"><font size="-1"> EGARCH-M </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1">  
+<img width="15" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg259.gif" alt="$ \lambda$"> </font></td>
+<td align="CENTER"><font size="-1">         </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1"> 0.107  </font></td>
+<td align="CENTER"><font size="-1"> 0.051 </font></td>
+<td align="CENTER"><font size="-1"> 0.338</font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+         </font></td>
+<td align="CENTER"><font size="-1">         </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1"> (2.14) </font></td>
+<td align="CENTER"><font size="-1"> (1.09) </font></td>
+<td align="CENTER"><font size="-1">  (3.31) </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+<img width="14" height="15" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1882.gif" alt="$ \nu$"> </font></td>
+<td align="CENTER"><font size="-1">   3.75E-04 </font></td>
+<td align="CENTER"><font size="-1"> 3.03E-04  </font></td>
+<td align="CENTER"><font size="-1"> 2.57E-04  </font></td>
+<td align="CENTER"><font size="-1"> -2.84E-04 </font></td>
+<td align="CENTER"><font size="-1"> 4.71E-05 </font></td>
+<td align="CENTER"><font size="-1"> -0.002  </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+      </font></td>
+<td align="CENTER"><font size="-1">  (4.414) </font></td>
+<td align="CENTER"><font size="-1"> (3.290) </font></td>
+<td align="CENTER"><font size="-1"> (2.608) </font></td>
+<td align="CENTER"><font size="-1"> (-0.79) </font></td>
+<td align="CENTER"><font size="-1"> (0.14) </font></td>
+<td align="CENTER"><font size="-1"> (-2.72)      </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+<img width="15" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2566.gif" alt="$ \phi$"> </font></td>
+<td align="CENTER"><font size="-1">  0.131 </font></td>
+<td align="CENTER"><font size="-1"> 0.137  </font></td>
+<td align="CENTER"><font size="-1"> 0.136 </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+        </font></td>
+<td align="CENTER"><font size="-1"> (6.808) </font></td>
+<td align="CENTER"><font size="-1"> (8.079) </font></td>
+<td align="CENTER"><font size="-1"> (5.940) </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1">   
+<img width="16" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1746.gif" alt="$ \omega$"> </font></td>
+<td align="CENTER"><font size="-1"> 8.42E-07 </font></td>
+<td align="CENTER"><font size="-1"> 8.22E-07 </font></td>
+<td align="CENTER"><font size="-1"> -5.259 </font></td>
+<td align="CENTER"><font size="-1"> 8.81E-07  </font></td>
+<td align="CENTER"><font size="-1"> 8.78E-07 </font></td>
+<td align="CENTER"><font size="-1"> -3.086 </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+         </font></td>
+<td align="CENTER"><font size="-1"> (5.312) </font></td>
+<td align="CENTER"><font size="-1"> (5.444) </font></td>
+<td align="CENTER"><font size="-1"> (-3.692) </font></td>
+<td align="CENTER"><font size="-1"> (5.28) </font></td>
+<td align="CENTER"><font size="-1"> (5.45) </font></td>
+<td align="CENTER"><font size="-1">  (-4.79) </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+<img width="16" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1663.gif" alt="$ \alpha$"> </font></td>
+<td align="CENTER"><font size="-1"> 0.079 </font></td>
+<td align="CENTER"><font size="-1"> 0.045 </font></td>
+<td align="CENTER"><font size="-1">                 </font></td>
+<td align="CENTER"><font size="-1"> 0.076  </font></td>
+<td align="CENTER"><font size="-1"> 0.049         </font></td>
+<td align="CENTER"><font size="-1"> </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+         </font></td>
+<td align="CENTER"><font size="-1"> (3.004) </font></td>
+<td align="CENTER"><font size="-1"> (2.073)  </font></td>
+<td align="CENTER"><font size="-1">            </font></td>
+<td align="CENTER"><font size="-1"> (2.74) </font></td>
+<td align="CENTER"><font size="-1"> (1.94) </font></td>
+<td></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+<img width="27" height="18" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg2565.gif" alt="$ \alpha^-$"> </font></td>
+<td align="CENTER"><font size="-1">        </font></td>
+<td align="CENTER"><font size="-1"> 0.058 </font></td>
+<td align="CENTER"><font size="-1">              </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1"> 0.044         </font></td>
+<td align="CENTER"><font size="-1">     </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+           </font></td>
+<td align="CENTER"><font size="-1">        </font></td>
+<td align="CENTER"><font size="-1"> (1.752) </font></td>
+<td align="CENTER"><font size="-1">            </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1"> (1.77) </font></td>
+<td></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+<img width="15" height="32" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1877.gif" alt="$ \beta$"> </font></td>
+<td align="CENTER"><font size="-1">  0.914 </font></td>
+<td align="CENTER"><font size="-1"> 0.918 </font></td>
+<td align="CENTER"><font size="-1"> 0.490           </font></td>
+<td align="CENTER"><font size="-1">  0.917  </font></td>
+<td align="CENTER"><font size="-1"> 0.919 </font></td>
+<td align="CENTER"><font size="-1"> 0.711</font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+        </font></td>
+<td align="CENTER"><font size="-1"> (44.07) </font></td>
+<td align="CENTER"><font size="-1"> (38.18) </font></td>
+<td align="CENTER"><font size="-1"> (3.41)       </font></td>
+<td align="CENTER"><font size="-1"> (41.43) </font></td>
+<td align="CENTER"><font size="-1"> (36.57) </font></td>
+<td align="CENTER"><font size="-1"> (10.87) </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+<img width="14" height="30" align="MIDDLE" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1613.gif" alt="$ \gamma$"> </font></td>
+<td align="CENTER"><font size="-1">          </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1"> 0.431  </font></td>
+<td align="CENTER"><font size="-1">   </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+<td align="CENTER"><font size="-1"> 0.388 </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+         </font></td>
+<td align="CENTER"><font size="-1">          </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1"> (13.95) </font></td>
+<td align="CENTER"><font size="-1">   </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+<td align="CENTER"><font size="-1"> (11.25) </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+<img width="13" height="16" align="BOTTOM" border="0" src="./Extensions of the GARCH Model_files/sfehtmlimg1732.gif" alt="$ \theta$"> </font></td>
+<td align="CENTER"><font size="-1">          </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1"> -0.171 </font></td>
+<td align="CENTER"><font size="-1">   </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+<td align="CENTER"><font size="-1"> -0.085 </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+         </font></td>
+<td align="CENTER"><font size="-1">          </font></td>
+<td align="CENTER"><font size="-1">           </font></td>
+<td align="CENTER"><font size="-1"> (-3.65) </font></td>
+<td align="CENTER"><font size="-1">  </font></td>
+<td align="CENTER"><font size="-1">   </font></td>
+<td align="CENTER"><font size="-1"> (-1.97) </font></td>
+</tr>
+<tr><td align="CENTER"><font size="-1"> 
+ logL    </font></td>
+<td align="CENTER"><font size="-1"> 20030.86  </font></td>
+<td align="CENTER"><font size="-1">  20049.18  </font></td>
+<td align="CENTER"><font size="-1"> 19713.81  </font></td>
+<td align="CENTER"><font size="-1"> 19996.19 </font></td>
+<td align="CENTER"><font size="-1">
+20008.22 </font></td>
+<td align="CENTER"><font size="-1"> 19827.41</font></td>
+</tr>
+<tr><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table> 
+
+</div></td></tr>
+</tbody></table>
+</div><p></p>
+<br>
+<br><hr>
+
+
+
+<div id="__vcbe" data-live="true"></div></body></html>

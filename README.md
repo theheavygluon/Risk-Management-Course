@@ -6,4 +6,4 @@ To do list:
  - MLE + Regression + ML
  - Finish Copula section
  - Implement Univariate distribution fitting in some insurance math context
- - Implement ARCH and GARCH (maybe even ARMA or GARCH-ARMA)
+ - Implement ARCH and GARCH (and maybe even ARMA or GARCH-ARMA) (Done)

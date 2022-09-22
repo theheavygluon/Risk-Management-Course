@@ -1,6 +1,14 @@
 # Risk-Management-Course
 Spending ~1.5hrs a day on this. NOTE: not an expert in any of this, just my notes on a course by Prof. Gregor Weiss from Leipzig University. 
 
+## Introduction
+
+## What is Quantitative Risk Management?
+
+## Table Of Content
+
+## References
+
 To do list:
  
  - MLE + Regression + ML

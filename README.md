@@ -8,7 +8,8 @@
 
 ## Introduction
 
-Very often in finance, a decision maker must consider the risk of every action. For example, an insurance business must price their premiums in accordance to the risk of various events, an asset manager must take into consideration their clients' risk tolerance, and a bank must have a model to determine (and ideally quantify) creditworthiness of potential debtors. This course is aimed at introducing the concept of quantitative risk, mostly in an market/banking context. Topics such as Stochastic Processes, Volatiltiy Forecasting, Mapping Risk Factors to Risk Measures are covered and implemented in Python.
+Very often in finance, a decision maker must consider the risk of every action. For example, an insurance business must price their premiums in accordance to the risk of various events, an asset manager must take into consideration their clients' risk tolerance, and a bank must have a model to determine (and ideally quantify) creditworthiness of potential debtors.  This course is aimed at introducing the concept of quantitative risk, mostly in an market/banking context. Topics such as Stochastic Processes, Volatiltiy Forecasting, Mapping Risk Factors to Risk Measures are covered and implemented in Python. After this course, you will ideally be able to tackle questions such as "How do we define risk?", "How do we manage several non-deterministic factors?", "How can I build and backtest a volatility forecasting model?". Note that this course, at least in its current state, does not offer any
+
 ## Dependencies
 
 ## Table Of Content

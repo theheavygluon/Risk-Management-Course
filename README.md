@@ -1,6 +1,8 @@
 # Risk-Management-Course
 
-<img align="center" src="https://media.istockphoto.com/photos/financial-data-on-a-monitorstock-market-data-on-led-picture-id523155194?b=1&k=20&m=523155194&s=170667a&w=0&h=PZDTM5x6ElXw5aSgzKtc8F4-cZ2nT6g33mN-8VAUCvM=">
+<p align="center">
+<img src="https://media.istockphoto.com/photos/financial-data-on-a-monitorstock-market-data-on-led-picture-id523155194?b=1&k=20&m=523155194&s=170667a&w=0&h=PZDTM5x6ElXw5aSgzKtc8F4-cZ2nT6g33mN-8VAUCvM=">
+ </p>
 
 **WARNING:** In case a reader plans on using these notebooks as a reference to learning about QRM, I highly advise taking everything said with a grain of salt, as this is not my field of expertise and these notebooks are simply my notes on [this course](https://www.youtube.com/watch?v=KUdZFqY4sxs&list=PL4i4aZbplv9KLOA0T4Vw_6PW_eYEYGSXR). 
 

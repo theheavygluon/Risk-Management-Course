@@ -15,11 +15,11 @@ Very often in finance, a decision maker must consider the risk of every action. 
 The dependencies of the Python Implementations are:
 
  - `pandas 1.5.0`
- - 'numpy 1.22.0'
- - 'matplotlib 3.6.0'
- - 'scipy 1.6.0'
- - 'arch 5.3.1'
- - 'seaborn 0.12.0'
+ - `numpy 1.22.0`
+ - `matplotlib 3.6.0`
+ - `scipy 1.6.0`
+ - `arch 5.3.1`
+ - `seaborn 0.12.0`
 
 ## Table Of Content
 

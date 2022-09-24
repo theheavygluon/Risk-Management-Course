@@ -23,9 +23,104 @@ The dependencies of the Python Implementations are:
 
 ## Table Of Content
 
+This course consists of 8 lectures:
+
+### Lecture 1: Introduction to Financial Statistics
+
+The title of this lecture might be misleading because whilst the content of this notebook shares a lot of content with intro stats courses, the manner and pace in which the content will be delivered assumes basic knowledge of the topic. A more appropriate title is "A Quick Brush up on Statistics In the Context of Finance". 
+
+The main topics of discussion are the following:
+
+ 1. Financial Data
+ 2. Financial Returns
+ 3. Statistical Variables
+ 4. Sample Statistics
+ 5. Two Dimensional Frequency Distributions
+ 6. Measures of Association 
+ 
+which should hopefully be a good start to the course.
+
+### Lecture 2: Statistical Distributions and Stochastic Processes
+
+The last lecture was focused on "introducing" the core concepts of inferential and descriptive statistics and overall how statistics could be used in finance. In the case of Risk Management, one is often concerned with modeling profit/loss data with various distributions and stochastic processes. This lecture will go through the most common families of statistical distributions and processes that one would encounter in Quantitative Risk Management.
+
+The main topics of discussion are the following:
+
+ 1. Probability Distributions in $\mathbb{R}^+$ and $\mathbb{R}^+_0$
+ 2. Multivariate Distributions
+ 3. Copulas
+ 
+ ### Lecture 3: Monte Carlo Simulations
+
+The previous section was concerned with probability distributions and stochastic processes. When introducing stochastic processes, I proposed a "coin game", which is a game where your friend goes on a 1D random walk according to a coin flip. If by the end of the walk they end up to the right of their initial position, they give you 5 dollars and if they end up to the left, you give them 5 dollars. Us being the opportunist finance enthusiats, we wanted to see if this game could be a valid investment by calculating the expected return (mean) and risk (standard deviation). The problem is that we did not have a formula for this stochastic process and therefore could not derive an expression for $\mu$ and $\sigma$. The way we went around this is by simulating the game hundreds of times and getting an estimation for $\mu$ and $\sigma$, in other words, we ran a Monte Carlo simulation. This section will be concerned with the details of how Monte Carlo simulations work and how we can use them in risk management. 
+
+The notebook will be divided into three parts:
+
+ 1. Motivation
+ 2. Inverse Transform Sampling 
+ 3. Applications
+
+### Lecture 4: Time Series Analysis
+
+Time series analysis is a very useful tool in financial engineering, especially when trying to extract a trend out of a stochastic process, calculate a smooth series (such as those "indicators" eg. SMA, EMA, etc), and forecast future developements of a time series. This notebook should hopefully cover all of these tasks and beyond. 
+
+The main topics of discussion are:
+
+ 1. Introduction to TSA
+ 2. Characteristics of time series
+ 3. Selected time series models
+ 4. Model Diagnostics
+ 5. Practical Example: Volatility Forecasting
+ 
+### Lecture 5: Sources of Risk
+
+Previously we covered time series analysis and how it can be used to perform techniques like volatility forecasting and modeling stocks prices. We will now shift towards describing the sources of risk, which is heavily dependent on the notion of a probability space. 
+
+The main topics of discussion are:
+
+ 1. Probability Spaces
+ 2. Fundamental Risk Factors
+ 3. Risk Mapping
+
+### Lecture 6: Risk Measures
+
+The previous lecture covered risk mapping, which should output a loss distribution $L_{t+1}. $ This lecture will be conerned with how to make such a distribution useful by introducing several methods for measuring risk. Such methods are used in financial institutions to perform tasks such as pricing insurance premiums, managing assets and determining how much capital one can afford to deploy on an investment given its risk. 
+
+The main topics of discussion are:
+
+ 1. Basics of risk measurement
+ 2. Axiomization of risk measure theory
+ 3. Important risk measures
+ 4. Standard techniques for calculating VaR
+
+### Lecture 7: Risk Backtesting and Forecasting
+
+So far, we have learned how to take a series of risk factors, map them to a loss distribution and use that distribution to define various risk measures (most notably, VaR and CVaR). This lecture will cover how to control, that is to review and assess the quality of a risk models you are using by backtesting or stress testing. This is done with the goal of overall improvement. 
+
+The main topics of discussion are the following:
+
+ 1. Forecasting
+ 2. Backtesting
+ 3. VaR estimation: a practical example
+
+### Lecture 8: Extreme Value Theory
+
+Say you run an insurance business for high end vehicles. When pricing insurance premiums, you must not only take into account scratches and dents, but rather also one of your client's superyachts setting on fire. Here we will introduce extreme value theory (EVT), which is concerned with modeling events that are far from the mean of a probability distribution (e.g one of your client's superyachts setting on fire).
+
+The main topics of discussion are the following:
+
+ 1. Introduction
+ 2. Block Maxima Method
+ 3. Threshold Exceedances
+ 4. Estimation of Risk based on Extreme Value Theory
+
+
 
 
 ## References
+
+
+<hr>
 
 To do list:
  

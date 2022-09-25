@@ -10,6 +10,11 @@
 
 Very often in finance, a decision maker must consider the risk of every action. For example, an insurance business must price their premiums in accordance to the risk of various events, an asset manager must take into consideration their clients' risk tolerance, and a bank must have a model to determine (and ideally quantify) creditworthiness of potential debtors.  This course is aimed at introducing the concept of quantitative risk, mostly in a market/banking context. Topics such as Stochastic Processes, Volatiltiy Forecasting, Mapping Risk Factors to Risk Measures are covered and implemented in Python. After this course, you will ideally be able to tackle questions such as "How do we define risk?", "How do we manage several non-deterministic factors?", "How can I build and backtest a volatility forecasting model?". Note that this course, at least in its current state, does not offer any advanced implementations to the methods described. Rather, all implementations act as proof-of-concepts that one could build sophisticated (sometimes industry level) models on top of. For this reason  I have included a further reading folder filled with research papers, problem sets and advanced sources that one could look through if they find a specific topic particularly interesting/necessary. 
 
+## Who is this for?
+
+These notebooks are designed for someone who has a background in statistics 101 and ideally knows a bit about stochastic processes. Furthermore, knowledge of several financial terms and concepts are assumed, although they're usually basic and could be learned by a quick google search. So, as you can see, there are very little pre-requisites and even those could be learned on the go (notebook 1 covers statistics 101, for example). The only thing I'd really insist on one knowing before reading this is Python. I try to make the code as simple as possible and comment on every line, but if you really want to build on top of this course I suggest having at least intermediate level skills. 
+
+
 ## Dependencies
 
 The dependencies of the Python Implementations are:
@@ -130,7 +135,7 @@ This course is heavily based on the following resources:
 
 <hr>
 
-To do list:
+Unfinished Business:
  
  - MLE + Regression + ML
  - Finish Copula section

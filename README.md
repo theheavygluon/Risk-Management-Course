@@ -89,7 +89,7 @@ The main topics of discussion are:
 
 ### [Lecture 6: Risk Measures](https://github.com/theheavygluon/Risk-Management-Course/blob/main/Lecture%206%20-%20Risk%20Measures.ipynb)
 
-The previous lecture covered risk mapping, which should output a loss distribution $L_{t+1}. $ This lecture will be conerned with how to make such a distribution useful by introducing several methods for measuring risk. Such methods are used in financial institutions to perform tasks such as pricing insurance premiums, managing assets and determining how much capital one can afford to deploy on an investment given its risk. 
+The previous lecture covered risk mapping, which should output a loss distribution $L_{t+1}$. This lecture will be conerned with how to make such a distribution useful by introducing several methods for measuring risk. Such methods are used in financial institutions to perform tasks such as pricing insurance premiums, managing assets and determining how much capital one can afford to deploy on an investment given its risk. 
 
 The main topics of discussion are:
 

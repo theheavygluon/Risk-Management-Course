@@ -30,7 +30,7 @@ The dependencies of the Python Implementations are:
 
 This course consists of 8 lectures:
 
-### Lecture 1: Introduction to Financial Statistics
+### [Lecture 1: Introduction to Financial Statistics](https://github.com/theheavygluon/Risk-Management-Course/blob/main/Lecture%201%20-%20Introduction%20to%20Statistics%20.ipynb)
 
 The title of this lecture might be misleading because whilst the content of this notebook shares a lot of content with intro stats courses, the manner and pace in which the content will be delivered assumes basic knowledge of the topic. A more appropriate title is "A Quick Brush up on Statistics In the Context of Finance". 
 

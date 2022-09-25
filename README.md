@@ -123,7 +123,7 @@ This course is heavily based on the following resources:
 
 [1] _Weiss, Gregor_. “Quantitative Risk Management", Leipzig University (Fall, 2021)
 
-[2] _McNeil, Alexander & Frey, Rüdiger & Embrechts, P.. _(2015). Quantitative risk management: Concepts, techniques and tools: Revised edition. Quantitative Risk Management: Concepts, Techniques and Tools: Revised Edition. 1-699. 
+[2] _McNeil, Alexander & Frey, Rüdiger & Embrechts, P.._ (2015). Quantitative risk management: Concepts, techniques and tools: Revised edition. Quantitative Risk Management: Concepts, Techniques and Tools: Revised Edition. 1-699. 
 
 [3] _Olofsson, Andersson_. Probability, Statistics, and Stochastic Processes: Revised edition. 
 

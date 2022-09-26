@@ -143,3 +143,5 @@ Unfinished Business:
  - ~~Implement ARCH and GARCH (and maybe even ARMA or GARCH-ARMA)~~ 
  - Do Bond Portfolio and Credit Portfolio + Python Implementation
  - Monte Carlo Simulation to Calculate VaR
+ - Check if the multivariate normal dist is correct (probably isn't)
+ - Lecture 8
